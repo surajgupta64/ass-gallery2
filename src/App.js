@@ -3,6 +3,7 @@ import "./App.css";
 import ImageCard from "./ImageCard";
 import Header from "./header";
 import History from "./History";
+import Cart from "./Cart";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ImageCard />} />
           <Route path="/history" element={<History />} />
-          <Route path="/cart" element={<ImageCard />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>

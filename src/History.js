@@ -13,6 +13,7 @@ export default function History() {
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
+              style={{borderRadius:'10px',padding:'5px'}}
               loading="lazy"
               
             />
