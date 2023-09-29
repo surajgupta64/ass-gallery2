@@ -2,17 +2,25 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function History() {
+  const [historyList,setHistoryList]=useState()
+  const list = JSON.parse(localStorage.getItem("history"));
+  useEffect(() => {
+    setHistoryList(list)
+  },[])
   return (
       <Box sx={{ mt: 9, width: '100%', height: '100%' }}>
+      {historyList && 
       <ImageList variant="masonry" sx={{padding:'0px 10px'}} cols={3} gap={8}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img} >
-                <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
+        {historyList?.map((item) => (
+          <ImageListItem key={item} >
+              <img
+              srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item}?w=248&fit=crop&auto=format`}
+              alt={item}
               style={{borderRadius:'10px',padding:'5px'}}
               loading="lazy"
               
@@ -20,6 +28,7 @@ export default function History() {
           </ImageListItem>
         ))}
       </ImageList>
+      }
     </Box>
   );
 }

@@ -4,8 +4,8 @@ import { FiShoppingCart } from "react-icons/fi";
 import { GoHistory } from "react-icons/go";
 import { Badge, Button } from "@mui/material";
 
-const Header = () => {
-
+const Header = ({count}) => {
+  
   return (
     <header className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-1thp9i">
       <div className="MuiToolbar-root MuiToolbar-dense css-mjywep">
@@ -25,7 +25,7 @@ const Header = () => {
           >
             History
           </Button>
-          <Badge badgeContent={4} color="primary">
+          <Badge badgeContent={count} color="primary">
             <Button
               color="success"
               size="medium"
